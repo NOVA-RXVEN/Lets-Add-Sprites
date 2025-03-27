@@ -13,6 +13,12 @@ YELLOW = pygame.Color('yellow')
 MAGENTA = pygame.Color('magenta')
 ORANGE = pygame.Color('orange')
 WHITE = pygame.Color('white')
+BLACK = pygame.Color('black')
+CYAN = pygame.Color('cyan')
+PINK = pygame.Color('pink')
+GREY = pygame.Color('grey')
+MAROON = pygame.Color('maroon')
+GREEN = pygame.Color('green')
 
 class Sprite(pygame.sprite.Sprite):
     def __init__(self, color, height, width):
@@ -40,11 +46,11 @@ class Sprite(pygame.sprite.Sprite):
             pygame.event.post(pygame.event.Event(BACKGROUND_COLOR_CHANGE_EVENT))
             
     def change_color(self):
-        self.image.fill(random.choice([YELLOW, MAGENTA, ORANGE, WHITE]))
+        self.image.fill(random.choice([YELLOW, MAGENTA, ORANGE, WHITE, BLACK, GREY, GREEN]))
         
 def change_background_color():
     global bg_color
-    bg_color = random.choice([BLUE, LIGHTBLUE, DARKBLUE])
+    bg_color = random.choice([BLUE, LIGHTBLUE, DARKBLUE, CYAN, PINK, MAROON])
     
 all_sprites_list = pygame.sprite.Group()
 
@@ -52,6 +58,51 @@ sp1 = Sprite(WHITE, 20, 30)
 sp1.rect.x = random.randint(0, 480)
 sp1.rect.y = random.randint(0, 370)
 all_sprites_list.add(sp1)
+
+sp2 = Sprite(WHITE, 20, 30)
+sp2.rect.x = random.randint(0, 480)
+sp2.rect.y = random.randint(0, 370)
+all_sprites_list.add(sp2)
+
+sp3 = Sprite(WHITE, 20, 30)
+sp3.rect.x = random.randint(0, 480)
+sp3.rect.y = random.randint(0, 370)
+all_sprites_list.add(sp3)
+
+sp4 = Sprite(WHITE, 20, 30)
+sp4.rect.x = random.randint(0, 480)
+sp4.rect.y = random.randint(0, 370)
+all_sprites_list.add(sp4)
+
+sp5 = Sprite(WHITE, 20, 30)
+sp5.rect.x = random.randint(0, 480)
+sp5.rect.y = random.randint(0, 370)
+all_sprites_list.add(sp5)
+
+sp6 = Sprite(WHITE, 20, 30)
+sp6.rect.x = random.randint(0, 480)
+sp6.rect.y = random.randint(0, 370)
+all_sprites_list.add(sp6)
+
+sp7 = Sprite(WHITE, 20, 30)
+sp7.rect.x = random.randint(0, 480)
+sp7.rect.y = random.randint(0, 370)
+all_sprites_list.add(sp7)
+
+sp8 = Sprite(WHITE, 20, 30)
+sp8.rect.x = random.randint(0, 480)
+sp8.rect.y = random.randint(0, 370)
+all_sprites_list.add(sp8)
+
+sp9 = Sprite(WHITE, 20, 30)
+sp9.rect.x = random.randint(0, 480)
+sp9.rect.y = random.randint(0, 370)
+all_sprites_list.add(sp9)
+
+sp10 = Sprite(WHITE, 20, 30)
+sp10.rect.x = random.randint(0, 480)
+sp10.rect.y = random.randint(0, 370)
+all_sprites_list.add(sp10)
 
 screen = pygame.display.set_mode((500, 400))
 pygame.display.set_caption("Colorful Bounce")
@@ -69,6 +120,15 @@ while not exit:
             
         elif event.type == SPRITE_COLOR_CHANGE_EVENT:
             sp1.change_color()
+            sp2.change_color()
+            sp3.change_color()
+            sp4.change_color()
+            sp5.change_color()
+            sp6.change_color()
+            sp7.change_color()
+            sp8.change_color()
+            sp9.change_color()
+            sp10.change_color()
         
         elif event.type == BACKGROUND_COLOR_CHANGE_EVENT:
             change_background_color()
@@ -79,6 +139,6 @@ while not exit:
     all_sprites_list.draw(screen)
     
     pygame.display.flip()
-    clock.tick(240)
+    clock.tick(200)
     
 pygame.quit()
